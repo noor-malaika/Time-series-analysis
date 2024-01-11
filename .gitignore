@@ -1,1 +1,2 @@
 weather_prediction/lightning_logs/*
+weather_prediction/__pycache__/*
