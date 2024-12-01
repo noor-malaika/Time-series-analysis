@@ -33,7 +33,7 @@ show_radar_plot = st.sidebar.checkbox("Show Seasonal Variability", value=False)
 show_stats = st.sidebar.checkbox("Show Summary Statistics", value=True)
 
 # Load the pre-trained NeuralProphet model
-fileName = 'neuralProphet_weather.joblib'
+fileName = 'weather_prediction/neuralProphet_weather.joblib'
 loaded_model = joblib.load(fileName)
 
 # Generate future dataframe and make predictions
@@ -45,7 +45,7 @@ st.subheader("Interactive Weather Forecast")
 fig = go.Figure()
 
 # Actual data points (if present)
-data = pd.read_csv("archive.csv")
+data = pd.read_csv("weather_prediction/archive.csv")
 fig.add_trace(go.Scatter(
     x=prediction['ds'],
     y=data['apparent_temperature_max (Â°C)'],
